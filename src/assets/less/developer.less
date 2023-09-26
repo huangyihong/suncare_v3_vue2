@@ -1,0 +1,196 @@
+.full-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px 24px;
+  background-color: #fff;
+  z-index: 9;
+}
+.selected {
+  background: #1890ff;
+  color: white;
+}
+
+.hover {
+  transition: background-color .5s;
+
+  &:hover {
+    background: #1890ff;
+    color: white;
+  }
+
+}
+
+.ellipsis-1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.search-divider-item {
+  display: inline-block;
+  width: calc(50% - 11px) !important;
+  min-width: 80px !important;
+}
+
+.search-divider {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+input.blue-tag{
+  background-color:rgb(45, 183, 245);
+  border: none;
+  color: white;
+}
+
+// 会影响日期选择
+/*input[readonly]{
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}*/
+
+
+input:read-only {
+  cursor: pointer;
+}
+
+// 快捷图标
+.modular-list {
+  margin-top: 8px;
+  padding: 8px 4px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center
+}
+
+.modular-list .modular-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 84px;
+  font-size: 50px;
+  color: white
+}
+
+.modular-list .modular-title {
+  margin-top: 5px;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+
+
+// 区域边框
+.fieldset-box {
+  padding: 16px;
+  border: 1px solid #ebedf0;
+  border-radius: 2px;
+  //display: inline-block;
+  width: 100%;
+  position: relative;
+  margin: 0 0 16px;
+  transition: all 0.2s;
+}
+
+.fieldset-box-group {
+  .fieldset-box();
+  padding: 12px;
+  margin: 0 0 8px;
+  background-color: rgba(0,0,0,0.03)
+}
+
+.drawer-padding {
+  border: 1px solid rgb(233, 233, 233);
+  padding: 10px 16px;
+}
+
+
+
+.resize-table-th {
+  position: relative;
+
+  .table-draggable-Position {
+    position: absolute;
+    //background-color: #00ff80;
+    height: 100% !important;
+    top: 0;
+    z-index: 1;
+    right: -5px;
+    width: 10px;
+    text-align: center;
+    //background-color: #ff3898;
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 100%;
+      border-right: 1px dashed #d8d8d8;
+    }
+  }
+
+  .table-draggable-handle {
+    position: absolute;
+    //background-color: #00ff80;
+    z-index: 2;
+    height: 100% !important;
+    top: 0;
+    left: -5px;
+    //right: -5px;
+    cursor: col-resize;
+    touch-action: none;
+    //background-color: #1890ff;
+    &.active {
+      background-color: #2af598;
+    }
+
+    /*  &:after{
+        display: inline-block;
+        content:'';
+        width: 1px;
+        height: 100%;
+        border-right: 1px dashed #b3b3b3;
+      }
+      &.active:after{
+        border-right: 2px dashed #333;
+
+      }*/
+  }
+}
+
+// 页面切换动画
+// 定义进入前与离开后状态
+.page-transition-enter, .page-transition-leave, .page-transition-enter-to, .page-transition-leave-to {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all .3s
+}
+
+.none-transition-leave,.none-transition-active, .none-transition-leave-to {
+  display: none;
+}
+
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-leave-active {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+.vxe-table--render-default .vxe-table--border-line{
+  display: none;
+}
+.vxe-table--render-default .vxe-table--fixed-left-wrapper, .vxe-table--render-default .vxe-table--fixed-right-wrapper{
+  z-index: 0;
+}
+
+.right-top.vxe-toolbar .vxe-custom--option-wrapper {
+  display: none;
+  position: absolute;
+  left: 2px;
+  bottom: 40px;
+  right: auto;
+}
+
+.vxe-grid.is--loading:before{
+  background-color: rgba(255,255,255, .5);
+  animation:show .3s forwards;
+}
+.vxe-grid.is--loading > .vxe-table .vxe-loading{
+  animation:show .3s forwards;
+}
+
+@keyframes show{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

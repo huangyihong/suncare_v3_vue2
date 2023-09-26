@@ -1,0 +1,352 @@
+/* 弹窗下的滚动条优化*/
+/* 影响到了table的标题浮动
+.ant-modal-content ::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+*/
+
+@min-width: 800px;
+
+/** 抽屉底部Button按钮间距 */
+.drawer-bottom {
+  /*text-align: right;
+  .ant-btn{
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }*/
+  position: absolute;
+  bottom: 0;
+  //width: 100%;
+  //border-top: 1px solid #e8e8e8;
+  padding: 10px 16px;
+  text-align: right;
+  right: 0;
+  //background: #fff;
+  border-radius: 0 0 4px 4px;
+  .ant-btn {
+    margin-left: 10px;
+  }
+}
+
+.min-table{
+  .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td, .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td {
+    padding: 6px!important;
+  }
+  .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th{
+    text-align: center!important;
+  }
+}
+
+.footer-padding0{
+  .ant-table-footer{
+    padding: 0;
+  }
+
+}
+
+.ant-table-scroll > .ant-table-body table {
+  overflow: hidden;
+}
+
+
+.background-grey {
+  .ant-card-head {
+    background: #e8e8e8;
+  }
+}
+
+.background-white-custom {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+
+.background-white {
+  .ant-select-disabled .ant-select-selection {
+    .background-white-custom;
+    user-select: text;
+    background-color: white;
+  }
+
+  .ant-input-number-disabled {
+    .background-white-custom;
+
+    .ant-input-number-input {
+      cursor: pointer;
+    }
+  }
+  .ant-select-disabled .ant-select-selection--multiple .ant-select-selection__choice{
+    color: rgba(0,0,0,0.65);
+  }
+}
+
+// 多选框的输入只读
+/*.hide-select-input {
+  .ant-select-search__field {
+    display: none !important;
+  }
+}*/
+
+.only-status, .ant-badge-status {
+  margin: 0 2px;
+  line-height: 5px;
+
+  .ant-badge-status-text {
+    display: none;
+  }
+}
+
+// 下拉多选防止因为编辑图标宽度换行
+.ant-select-selection--multiple .ant-select-search--inline .ant-select-search__field {
+  width: 1px;
+}
+
+.ant-form-inline .ant-col {
+  > .ant-form-item-with-help {
+    margin-bottom: 0;
+  }
+
+  > .has-feedback {
+    display: block;
+  }
+
+}
+
+// 拖动文件上传区域设最大
+.ant-upload.ant-upload-drag .ant-upload-drag-container {
+  display: block;
+}
+
+// 背景把底部的线盖住了
+//.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+//  background: transparent;
+//}
+
+.ant-tabs.ant-tabs-card.ant-tabs-editable-card{
+  .ant-tabs-bar.ant-tabs-top-bar.ant-tabs-card-bar{
+    margin: 0;
+  }
+
+
+}
+
+.min-step.ant-steps-label-vertical {
+  .ant-steps-item-content {
+    width: 80px;
+  }
+
+  &:not(.ant-steps-dot) {
+    .ant-steps-item-icon {
+      margin-left: 27px;
+    }
+  }
+
+  .ant-steps-item-tail {
+    margin-left: 41px;
+  }
+}
+
+// table 展开项右边不留空白，不然会超出父table
+.ant-table-middle tr.ant-table-expanded-row td > .ant-table-wrapper {
+  margin: -12px 0 -13px;
+}
+
+.ant-slider-vertical .ant-slider-mark {
+  // 取消竖行slider距离右边距离
+  width: 0;
+}
+
+.ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+  // 抽屉最大宽度100%
+  max-width: 100%;
+  //min-width: 800px;
+}
+
+// 锚点被遮挡
+.ant-anchor-wrapper {
+  margin-left: auto;
+}
+
+// 步骤组件指针为点击
+.ant-steps-item {
+  cursor: pointer;
+}
+
+// table滚动条自动隐藏
+.ant-table-scroll > .ant-table-body {
+  overflow-x: auto !important;
+  min-height: 200px;
+}
+
+// 表为空时没有最低高度
+.ant-table-empty .ant-table-body {
+  min-height: auto;
+}
+
+// 为空时table提示区域
+.ant-table-placeholder {
+  //padding: 0;
+  border-bottom: none;
+}
+
+// 去除表头偏移
+.ant-table-fixed-header .ant-table-scroll .ant-table-header {
+  min-width: 0 !important;
+}
+// 去除多选后的空白行
+.ant-select-selection--multiple::before, .ant-select-selection--multiple::after {
+  display: inline!important;
+}
+
+.ant-modal{
+  padding-bottom: 0;
+}
+.m-model-style .ant-modal {
+  min-width: @min-width;
+}
+
+// 导航去除下划线
+.ant-anchor-link > .ant-anchor-link-title {
+  text-decoration: none;
+}
+
+.unset-color {
+  color: inherit;
+}
+
+.ant-select-disabled {
+  // 禁止下拉选择框
+  .unset-color();
+  // 隐藏下拉箭头
+  .ant-select-arrow {
+    display: none;
+  }
+
+  .ant-select-selection {
+    background-color: #f9f9f9;
+    //background-color: #f9f9f9;
+  }
+}
+
+.ant-table-fixed-left, .ant-table-fixed-right {
+  z-index: 2;
+}
+
+/** 抽屉底部Button按钮间距 */
+.drawer-bottom {
+  /*text-align: right;
+  .ant-btn{
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }*/
+  position: absolute;
+  bottom: 0;
+  //width: 100%;
+  //border-top: 1px solid #e8e8e8;
+  padding: 10px 16px;
+  text-align: right;
+  right: 0;
+  //background: #fff;
+  border-radius: 0 0 4px 4px;
+  .ant-btn {
+    margin-left: 10px;
+  }
+}
+
+.ant-table-bordered .resize-table-th {
+  //border-right: 1px dashed #d8d8d8!important;
+}
+
+.ant-form-item-with-help.help-red {
+  &> .ant-form-item-control-wrapper> .ant-form-item-control {
+    &>.ant-form-explain, .ant-form-extra{
+      color: red!important;
+    }
+
+  }
+}
+
+
+// 隐藏子页面根节点为a-card的边距
+.card-padding0 {
+  > .ant-card-body {
+    padding: 0;
+  }
+
+  .ant-card-extra {
+    padding: 0;
+  }
+}
+
+.padding-0{
+  &, .ant-collapse{
+    background-color: white;
+    .ant-collapse-content > .ant-collapse-content-box {
+      padding: 0;
+
+      .ant-descriptions-view {
+        border: none;
+      }
+    }
+  }
+
+}
+
+
+.border-0 {
+  .ant-table-small {
+    border: none;
+  }
+}
+
+.min-height-0 {
+  // table滚动条自动隐藏
+  .ant-table-scroll > .ant-table-body {
+    min-height: 0;
+  }
+}
+
+.min-width-0, .modal-mini {
+  .ant-modal {
+    min-width: 0;
+  }
+}
+
+.min-alert{
+  padding: 4px 10px 4px 25px;font-size: 12px;
+  .ant-alert-icon{
+    top: 7px;
+    left: 7px;
+  }
+}
+
+
+.radius-left-none{
+  .radius-left-none-type();
+  .ant-select-selection, &.ant-input{
+    .radius-left-none-type();
+    border-left: none;
+  }
+}
+
+.radius-right-none{
+  .radius-right-none-type();
+  .ant-select-selection, &.ant-input{
+    .radius-right-none-type();
+  }
+
+}
+
+
+.radius-left-none-type{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0
+}
+
+
+.radius-right-none-type{
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
